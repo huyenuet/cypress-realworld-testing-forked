@@ -18,15 +18,15 @@ describe('home page', () => {
 
   context("Course section", () => {
     it("Course: Testing Your First Next.js Application", () => {
-      cy.getByData('course-0').find('a').eq(3).click()
+      cy.getByData('course-0').find('a').contains('Get started').click()
       cy.location("pathname").should("eq", "/testing-your-first-application")
     })
     it("Course: Testing Foundations", () => {
-      cy.getByData('course-1').find('a').eq(3).click()
+      cy.getByData('course-1').find('a').contains('Get started').click()
       cy.location("pathname").should("eq", "/testing-foundations")
     })
-    it.only("Course: Cypress Fundamentals", () => {
-      cy.getByData('course-2').find('a').eq(3).click()
+    it("Course: Cypress Fundamentals", () => {
+      cy.getByData('course-2').find('a').contains('Get started').click()
       cy.location("pathname").should("eq", "/cypress-fundamentals")
     })
   })
