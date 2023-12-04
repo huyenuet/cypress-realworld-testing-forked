@@ -36,6 +36,22 @@
 //   }
 // }
 
+
 Cypress.Commands.add('getByData', (selector) => {
     return cy.get(`[data-test=${selector}]`)
 })
+
+
+declare global {
+    namespace Cypress {
+        interface Chainable {
+            /**
+             * @param args 
+             * @returns 
+             */
+            getByData: (args?: string) => Chainable<JQuery<HTMLElement>>
+        }
+    }
+}
+
+export{}
